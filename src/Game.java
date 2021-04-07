@@ -16,7 +16,6 @@ public class Game {
                 points += rolls[i + 1];
                 points += rolls[i + 2];
             }
-
             if ((i % 2 == 0) && (rolls[i] + rolls[i + 1]) == 10) {
                 points += rolls[i + 2];
             }
