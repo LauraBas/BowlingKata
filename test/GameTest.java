@@ -61,12 +61,12 @@ class GameTest {
         Assertions.assertEquals(35, g.score());
     }
 
-    //    @Test
-//    void shouldScoreAPerfectGame() {
-//        Game g = new Game();
-//        rollMany(g, 11);
-//        Assertions.assertEquals(300, g.roll(10));
-//    }
+    @Test
+    void shouldScoreAPerfectGame() {
+        Game g = new Game();
+        rollMany(g, 12);
+        Assertions.assertEquals(330, g.score());
+    }
 
     private void rollMany(Game g, int times) {
         for (int i = 0; i < times; i++) {
