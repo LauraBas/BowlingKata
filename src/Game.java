@@ -16,14 +16,10 @@ public class Game {
                 points += rolls[i + 1];
                 points += rolls[i + 2];
                 firstRollOfFrame = true;
-            }
-
-            if (isASpare(i)) {
-                points += rolls[i + 1];
+            } else if (isASpare(i)) {
+                points += rolls[i + 2];
                 firstRollOfFrame = !firstRollOfFrame;
-
-            }
-            if (!isAStrike(i) && !isASpare(i)) {
+            } else {
                 firstRollOfFrame = !firstRollOfFrame;
             }
             points += rolls[i];
@@ -32,7 +28,7 @@ public class Game {
     }
 
     private boolean isASpare(int i) {
-        return (i > 0 && !firstRollOfFrame && (rolls[i] + rolls[i - 1]) == 10);
+        return (firstRollOfFrame && (rolls[i] + rolls[i + 1]) == 10);
     }
 
     private boolean isAStrike(int i) {
